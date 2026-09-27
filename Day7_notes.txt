@@ -1,0 +1,126 @@
+                                    ---------- Intro to The Command line ----------
+-UNIX/LINUX Command line
+    pwd) print working directory
+
+    ls) List directories and files in the current location
+        -l) list mode
+        -a) all (Shows hidden)
+
+    cd) change directory
+        ..) from the parent directory
+        .) from current directory
+        ~) to home 
+        //) from root
+
+    mkdir) make directory
+
+    touch) create files
+    
+    cp or mv) copy files
+        ** mv moves files as well
+
+    rm) remove files
+        -r) delete this shit NOW
+
+    rmdir) remove directory
+
+    cat & less) Print out the entire file into the command line
+        ** less opens it in another window/pages
+
+    head & tail) inspect files at either the end or beginning 
+        ** You can choose how many you see
+    
+    nano / micro) inline text-editor
+
+    Pipeline - |) pipeline connects stdout of one program directlu into stdin of another 
+    
+    Overwrite - >) redirect output to create or overwrite a target file
+    
+    Append - >>) append output to the end of an existing file without cestroying content
+
+    grep) search text streams instantly using key phrases or regex patterns
+
+    wc -l) count lines, words, or bytes produced by any upstream command 
+
+    sort | uniq -c) sort lines and count or isolate duplicate frequency entries
+
+
+-PERMISSIONS and SYSTEM CONTEXT
+    whoami) tells you the current username
+
+    chmod +x) grant script execution rights
+
+    sudo) execute commands with admin dih
+
+
+-HELP
+    man <command>) the manual
+
+    <command> --help) quick usage summary
+
+-MORE COMMANDS
+    sed) Modify text data as the stream is occurring
+        *stream editor - so more research
+       
+        Example 1 - substitution)
+            "$ sed 's/foo/bar/' input.txt > output.txt" - replaces the first instance
+
+        Example 2 - global subs)
+            "$ sed 's/foo/bar/g' input.txt > output.txt" - replaces the all instances in the files
+
+        Example 3 - [MISSING])
+            [MISSING]
+
+        -n) supresses the printing of the pattern
+
+        -e) allows multiple editing commands to be specified in a single sed command
+
+        -i) edits files in place, making changes directly to the input file
+
+        -f scriptfile) reads sed commands from a specified file, allowing for complex scripts
+
+        -r or -E) Enambles extended regular expressions, allowing for more complex pattern matching
+
+        -g) applies the substitution globally to all matches in a line        
+
+    awk) Modify a file based on a series of expression
+        ** it is a separate programming language designed for text processsing and data extraction
+
+        print) outpit specific fields o rlines
+            ex) awk '{print $1, $2}' file.txt
+                ** print field one and two of file.txt
+        
+        pattern matching) process lines matching a pattern 
+            ex) awk '/pattern/ {print $0}' file.txt
+
+        filed separator) specify a custom field separator 
+            ex) awk -F, '{print $1}' file.csv
+
+        sum a column)
+            ex) awk '{sim += $3} END {print sum}' data.txt
+                ** sims the values in the thrid column of data.txt
+        
+        conditional processsing)
+            [MISSING]
+
+-ESSENTIAL TOOLS FOR ROS2
+    CMake) build system generator used to manage the build process of software projects
+        ** essential for building ROS2 packages
+
+    Colcon) Builds and testing multiple software packages. Used for building ROS2 workspaces
+
+    Python 3) required for running ROS stuff
+
+    Net-tools) provides networking utilities lif ifconfig, useful for network config and troubleshooting
+
+    Curl/Wget) used to download packages from the web
+
+    Lsb-release) gives info about the version of linux that you are on
+
+    Build-essential) contains everything we need to makes software (Required for ROS)
+
+    Aptitude) Manages the various packages from the source repo
+
+    GBD) GNU debugger for C++ apps
+
+    Tmux/Screen) Terminal multiplexers for managing multiple terminal sessions

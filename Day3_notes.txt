@@ -1,0 +1,167 @@
+Working with a remote repository: Cloning
+    The developer clones the repository from the server to get a local copy of a repo that they wish to work on or modify.
+   
+    command:
+        a) git clone <URI-of-remote-repo> <Project-name>
+                The command copies the entire object graph and repo and allows you to have your own set of files to work on
+
+Pushing and pulling
+    commands:
+        a) git push <remote-name> <branch-name>
+            sends the local commits to a remote repo
+
+        b) git pull
+            Retrieves commits from a remote repo and incorporpate themm into your local repo
+                ** Try to do a git pull before you start working to prevent merge conflicts
+
+Branching workflows
+    Branches are alt versions of folders in a repo that allow for different people to work on different things without interfering with eachother
+        Branches can either be ahead or behind the main line depending the states of either
+
+    commands:
+        a) git checkout -b <new-branch-name>
+            creates an exact copy of the exact branch that you are on and makes an offshoot based on that
+        
+        b) git checkout <branch-name>
+            allows you to switch between branches
+
+    Branch management:
+
+        Trunk/Master/Main) 
+            The canonical ready version of the ready code. Should be kept in a buildable state
+
+        Developement branch)
+            Long lived branch for iterating on work in progress. It merges when the feature is ready. Immediately. (LIKE DO IT ASAP)
+
+        Trunk-based workflow) 
+            Small changes are made into tiny branches that are mainly based on fixes or small improvements. The main branch needs continuous testing for usability
+
+        Release branch)
+            Tracks version of software released "in the wild". It is easily maintainable and allows for the bug fixes to occur to the very beginning.
+            The branches themselves are released.
+
+    The goal is to keep everything alive and to keep your main tree from burning.
+
+Merging and Rebasing
+    Ways to merge branches back together
+
+    commands:
+        a) git merge <branch-to-merge>
+            joins two branches together (The one you're on and the one you name)
+        
+        b) git merge --fast-forward
+            simply moves the branch pointer forward if there are no diverging changes
+
+        c) git rebase <target-branch>
+            Moves the base of a branch to be a different commit
+            (EXPERIMENT AT YOUR OWN RISK!!!)
+            Best use: to fix super fucked trunks and branches
+
+        d) git cherry-pick <commit-ID> 
+            Copies a specific commit form one branch into another branch 
+            Useful for moving around bug fixes
+    
+    All of this is to give you atomic control of the changes instead of file dumping and having to fix that issue
+
+Handling Merge Conflicts
+    Merge conflicts occurs when changes mande in doggerent branches affect the same lines of code or the same part of the same file, and Git cannot automatically resolve them.
+        ** If it happens, the output CONFLICT will show up in big ass letters
+    
+    fixing:
+        1) Run git status to identify the conflicting files
+        2) Open the files in your editor
+        3) Conflicted parts will be marked with
+            <<<<<] Your current branch 
+            >>>>>] The branch you're merging into
+            =====] Divider
+        4) Make the appropriate changes 
+        [MISSING]
+
+Best practices
+    1) Keep repo clean
+        Ensure there are no uncommitted changes before you switch branches
+
+    2) Use git status frequently
+        stay aware of your repos state
+
+    3) Pull frequently
+        Make sure that the local repo is updated so that you don't cause conflicts or do redundant work
+
+    4) Commit small, logical changes
+        Make sure that you make small commits that are in a buildable state (Needs to ensure that the branch can still work after the commit)
+
+    5) Consiter trunk-based workflow
+        Keep changes small and merge immediately to the main branch
+    
+    6) When to merge/rebase/cherry-pick
+        Fast-forward] when possible
+
+        rebase then fast forward] if you are the ONLY ONE working on a repo
+
+        Merge] if other options aren't possible
+
+        cherry-pick] to copy a specific commit to another base
+
+    7) Never rebase a shared branch as it rewrites history and cause a repo apocolypse
+
+Merge Strats
+    Linear history)
+        total ordering of commits (Commits only happen and exist after the latest commits)
+    
+    One-way merging) 
+        Total ordering of merge commits. Basically hard focusing on a branch and then merging it to main
+    
+    Two-way merging) 
+        Incorporate new work by merging the trunk into a branch. Resolves problems during back-merges
+    
+    merge vs rebase)
+        Both have opportunities to introduce sneaky bugs
+        Merges appear in history but rebases do not
+
+Git terms
+    Blame)
+        using git blame is used to show what revision and author last modified each line of a file. It healps idetigy who made specific changes to a file and when those changes were madee
+    
+    Bisect)
+        using git bisect is a tool used to find the commit that intruduces a bug by using a binary search algorithm. It helps narrow down the problematic commit by checking out different commits and asking the user if the commit is good or bad.
+
+    Remote)
+        a remote is a common repo that all tema memebers use to exchange their changes. Hosted on a remote server.
+    
+    Branch)
+        A branch is a movable pointer to one of the commits.
+    
+    Submodule) 
+        A repo embedded inside another Git repo. It allows you to include nd manage repos within a main repos.
+
+    Restore) 
+        The git restore command is used to restore working tree files. It can be used to discard changes in the working directory or to restore files from another branch or commit.
+
+    Checkout)
+        The git checkout command is used to switch branches or restore files in the working directory. It updates the files in the working directory to m atch the version stored in the branch or commit
+    
+    Tag)
+        A tag in Git is a reference to a specific pont in history, typically used to mark release points (DO NOT CHANGE THEM)
+
+    Rebase) 
+        the git rebase command moves or combines a sequence of commits to a new base commit
+    
+    Diff) 
+        the git diff command shows the changes between each commit.
+
+    Cherry pick)
+        git cherry-pick is a command that applies tae changes introduced by some existing commits
+
+    Fetch)
+        git fetch is a command that downloads objects and refs from another repo. It updatse the rempte tracking branches but [MISSING]
+
+    Staging)
+        [MISSING]
+
+    Revert/Reset)
+        git revert] creates a new commit that undoes the changes made bu a prevuous commmit, preserving the project history
+
+        git reset] undoes chnages bu moving the HEAD and branch pointer to aspecified commit, altering the commit history
+
+    Ammend)
+        git commit --ammend is used to modify the most recent commit. It allows you to change the commit message or add more changes to the previous commit.

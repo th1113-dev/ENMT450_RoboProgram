@@ -1,0 +1,74 @@
+                     ---------- Operating systems, Virtual Machines, and containers ----------
+
+-OPERATING SYSTEMS
+    History of OS:
+        WINDOWS
+            MS-DOS (Microsoft Disk OS)
+                1981: MS-DOS was released my MS for IBM PCs
+                1982 - 1994: MS-DOS has various version releases with a CLI
+            
+            Windows 1.0 - 3.x
+                1985: Windows 1.0 launched as a GUI for MS-DOS
+                1987: Windows 2.0 introduced overlapping windows and improved graphics
+                1990: Windows 3.0 dropped and offered a more polished GUI
+                1992: Windows 3.1 introudced TrueTypes fonts and multimedia capabilities
+
+            Windows 95 to Windows ME
+                1995: Windows 95 came with a new start menu and taskbar
+                1998: Windows 98 improved hardware support and included internet explorer
+                2000: Windows ME (Millenium Edition) focused on home users with multimedia enhancements
+            
+            Windows NT to Windows 200
+                1993: Windows NT series began and was designes for business. Better security
+                2000: Windows 2000 integrated NT tech into a consumer-friendly OS
+
+            Windows XP to Windows 11
+                2001: Windows XP combined NT and consumer lines. Stable and user friendly
+                2007: Windows Vista introduced a new Aero interface, but had performance issues
+                2009: Windows 7 improved on vistas shortcomings, widely praised for its performance
+                2012: Windows 8 introduced a touch-friendly interface with the start screen [This is where it all went downhill]
+                2015: Windows 10 unified the platform across devices with regular updates
+                2021: Windows 11 launched with AI slop, spyware, and hella bloat [AND I FUCKING HATE IT]
+
+        LINUX
+            Unix origins
+                1969: Unix devleloped at AT&T Bell Labs, and is the mother of a lot of OS'
+            
+            GNU Project and Linux Kernel
+                1983: GNU Project initiated bu Rchard Stallman to create a free Unix-like OS
+                1991: Linux Kernel created bu Linus Torvalds, combining with GNU to form a complete OS
+
+            Growth and distribution
+                1993: Slackware and Debian are released
+                1994: Red Hat was made and became a major commercial distribition
+                2004: Ubuntu is launched. MIre user focused
+
+            Modern Developments
+                2000s-present: Continuous development with hella distros for any need necessary (Arch is born)
+
+            Enterprise used
+                Linux is widely used in server envoronments, cloud computings, and embedded systems
+            
+        MAC OS (Machintosh OS)
+            Classic Mac OS
+                1984: System 1 released with the og Mac with a GUI
+                1985-1999: Itereative versions came out and improvements were made over time
+
+            Transition to Mac OS X
+                2001: Mac OS X launched, based on NeXTSTEP and Unix, with a new Aqua interface
+                2000s: Iterative Updates with codenames like pather tiger, and leopard enjancincg performance and features
+
+            Modern Mac OS
+                2012: OS X Mountain Lion emphasized integration with Apples ecosystem
+                2016: macOS Sierra introduced Siri
+                2020: macOS Big Sur marked a major redsign and transition to Apple Silicon
+                2023: macOS Sonoma continued to refine the user exerience with new features
+ 
+-INTRO TO VMs
+    A VM is a software emulation of a phusical computer rinning an OS and apps
+        -allows multiple OS to run on a single physical machine (Each is isolated)
+        -The OS' share physical resources like CPU, memory, and storage
+        -Super flexible
+
+
+                                                [TO BE CONTINUED]

@@ -1,0 +1,122 @@
+The Three laws of Robotics:
+
+    1) A robot may not injure a human being or, through inaction, allow a human being to come to harm
+    2) A robot must obey the orders given it by human beings except where such orders would conflict with the First Law
+    3) A robot must protect its own existence as long as asuch protectioction does not conflict with the First and Second Law
+
+
+The Zeroth Law:
+
+    0) A robot may not harm humanity, or, by inaction, allow for humanity to come to harm
+
+
+                                    ---------- SOFTWARE VERSION CONTROL ---------- 
+
+Goals:
+
+    1) How to safely store files
+    [MISSING]
+
+
+VERSION CONTROL
+
+    - AKA Revision control or source control
+
+    - Managres different versions of your files and folders
+
+    - Why do we need ts? 
+        a) To keep track of versions and check what is in them
+        b) Restore versions and files that may have been removed or deleted
+        c) Prevents confusion of stuff
+        d) Mark functional versions of stuff
+
+
+CENTRALIZED VERSION CONTROL SYSTEMS
+
+    - There is a singler, central server that stores all versions of the projects flies
+
+    - Only the latest versions are stored locally on a machine
+
+    - CHARACTERISTICS
+        a) all operations generally require connection to the server (Like updating or commiting)
+        b) The entire history of the software is on the central server
+
+
+DISTRIBUTED VERSION CONTROL SYSTEMS
+
+    - Clients can take a copy of the entire reposity, including its complete history, to their local machine
+        
+    - CHARACTERISTICS
+        a) Fully distributed design
+        b) Maintains local copy of the entire repository on each machine
+        c) Wifi-less
+        d) Need to PUSH IOT let everyone have the current version
+        e) FAST AS FUCC BOI
+        f) Robust (Everyone has a full copy of a repo). Prevents loss of the stuff
+
+
+GIT - A DVCS
+
+    - The workflow revolves around managing changes in your working directory, staging area, and the repositorys history
+
+    - Old versions of files are hidded in a folder called .git
+
+    - Cannot change binary files (Ex. CAD files)
+
+    -COMMANDS
+        a) git init
+            Enables Git into a certain repository (making it a Git repo)
+
+        b) git add <file>
+            Used to stage files, marking the changes you want to include in the next snapshot/commit
+
+        c) git commit
+            Creates a snapshot of the currently staged changes, recording them in the repos history. Each commit includes metadata like the author, timestamp, and a descriptive message
+
+        d) git status
+            Use the command to see the surrent stat of your working directory, including staged, unstaged, and utracked changes
+
+        e) git log
+            The command shoes the commit history 
+                git lol shows it in ASCII art
+
+        f) git diff
+            See what changes were made
+
+        g) git clone <URI of remote repo> <project name>
+            Makes full copy of a repo onto the local machine
+        
+        h) git push <remote name> <branch name>
+            Pushes your changes into its own branch
+                **Works without the remote or branch name too (git push)
+
+        i) git pull
+            Updates all changes and merges them into local repo [DO THIS OFTEN]
+
+        j) git checkout -b <New branch name>
+            Creates a new branch and switches to it
+
+        k) git checkout <branch name>
+            use to switch in between branches
+
+        l) git merge <branch to merge>
+            Merges branches together 
+        
+        m) git merge --fast-forward
+            Git moves the branch pointer forward if there are no diverging changes
+        
+        n) git rebase <target-branch>
+            moves the base of a branch to be a different commit # [DO NOT TO TO OTHER PEOPLES BRANCHES]
+
+        o) git cherry-pick <commit-ID>
+            Copies a specific commit from one branch to another branch
+        
+
+    -HANDLING MERGE CONFLICTS
+        Resolution steps)
+
+            1) Run git status to ID the conflicting files
+            2) Open the files in your editor
+            3) Conflicted parts will be merged with the following
+                3a) <<<<<<<<<<<, ==================, >>>>>>>>>>>
+            [MISSING]

@@ -1,0 +1,102 @@
+Goals of this class:
+
+    - Fundamentals of robotics programming
+    - pROGRAMMING CONCEPTS AND SOFTWARE DESIGN
+    - Source control concepts and practic
+    - Hardware int the Loop (HWIL) testing and integration
+    - Software systems engineering concepts
+
+
+Outcomes
+
+    - Describe the fundamentals of ROS2, their uses, applications, and limitations
+    - Compare and contrast different data communication methods within the ROS ecosystem
+    - Interface with systems that are not ROS native
+    - Understand the role of system drivers and how they affect integration of hardware into the robotics system within the ROS framework
+
+
+Expectations
+
+    - Use ROS similation facilities that exist within ROS (Like Gazeebo)
+    - Analyze interfacing considerations 
+    - Perform forward and inverse kinematic computations for serial and parallel manipulators
+    - Software source control (GITHUB!!!! and... subversion)
+
+
+Required Resources
+
+    - Try getting the book "ROS 2 from Scratch" - look into the website/software Packt Publishing
+    - Try to dualboot with Ubuntu later to use ROS (And maybe Black ARCH or Kali)
+    - Try downloading VScodium or some other text/code editor
+
+
+Note: Prep for the labs is given a week prior and must be read (AND UNDERSTOOD) before the lab begins 
+    - Ask Dr.Limparis if you need help. PLEASE! FUTURE THEO! ASK FOR HELP!!!
+
+
+                            ~~~~~~~~~~ INTRODUCTION TO ROBOTICS PROGRAMMING ~~~~~~~~~~
+
+Agenda
+
+    - What is Robotics?
+    - Key Components of a Robot
+    - Introduction to Robotics Programming
+    - Applications of Robotics
+    - Source control concepts
+
+
+
+WHAT IS ROBOTICS?
+
+    The interdisciplinary branch of engineering and science (Mech E, Elec E, Info E, computer science, etc). 
+
+        Purpose: Design, construct, operate, and use robots
+        Goal: Create machines that can assist or substitute for humans
+
+
+KEY COMPONENTS OF A ROBOT
+
+    - Sesors
+    - Actuators
+    - [MISSING]
+    - Power sources
+
+
+INTRO TO ROBOTICS PROGRAMMING
+
+    Writing code to control the behavior and actions of a robot
+
+    -Frameworks:
+        [MISSING DEFINITION]
+    
+    -Algorithm:
+        A step by step procedure for solving a problem or accomplishing a task
+
+    -Loop:
+        A sequence of instructions that is continually repeadted until a certain condition is creached
+
+    -Conditional Statements:
+        Commands that perform different actions depending on whether a condition is true or false
+
+    -Function:
+        A block of code [MISSING]
+
+APPLICATION OF ROBOTICS
+
+    -Industrial Automation
+        robots for manufacturing
+
+    -Healthcare
+        Robots in surgery and rehabilitation
+
+    -Exploration
+        SPAAAAAAAAACE and other stuff
+
+    -Consumer products
+        Home automation and personal assistants
+
+
+HISTORICAL CONTEXT
+
+    Coined by a Czech writer. Robota is the origin and it means "Forced Labor"
+       -Our use and creation of robots not the same as it was in the play

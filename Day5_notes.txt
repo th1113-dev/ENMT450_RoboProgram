@@ -1,0 +1,109 @@
+                     ---------- Operating systems, Virtual Machines, and containers ----------
+                                                    [CONTINUED]
+
+-FROM DESKTOP TO ROBOTIC CONTROL
+    There are general OS' and RTOS' where there are different tradeoffs for them to be individuals and also to work with eachother
+        * results in non-deterministic processes to occur (Jitter)
+            ~ makes things with high rates of control unusable on these systems
+    RT and Robotic OS' are designed for hard latency guaruntees with little to no jitter
+        * Prioritizes function over GUI for example
+
+    Windows dominates the factory PLC setups and automation software
+        * Closed-source API restricted low-level timing mods.
+
+    macOSx has a comfortable environmemt for users while allowing for software usage capability
+        * Strict hardware lock-in and driver signing created friction for hardware sensor IO
+
+    Linux is opensource and real-time patches can be made (PREEMPT_RT)
+        * Open modular kernel enabled Willow Garage to build ROS natively on Ubuntu in 2007
+
+
+-OS LIMITATIONS CREATED FOR ROBOTICS PROGRAMMING
+    1) Kernel Preemption and jitter
+        Kernel delays interrupt execution to favor CPU throughput
+            * Intruduces latency spikes
+
+    2) Peripheral Driver Lock-in
+        LiDARs, CAN buses, and robotic arms rely on low-level C++ drivers compiled strictly for specific OS Kernel ABI Versions
+
+    3) Distribution dependancy coupling
+        Early ROS 1 releases tied distros strictly to Ubuntu LTS versions.
+            * Freezes system updates
+
+
+-BRIDGING LIMITATIONS: META_OS APPROACH
+   The software stack: 
+        User robot application (Nav2, MoveIt, Perception)
+        Robotics middleware (ROS 2 DDS Pub-Sub Layer)
+        OS Kernel (Linux PREEEMPT_RT/RTOS)
+        Physical Robot Hardware (Actuators, CAN, LiDAR)
+
+    The modern standard of ROS 2 Architecture is as follows:
+        1) Multi-OS Execution - Native on the Big OS' now
+        2) Real-Time Capabilities - 
+        3) Data Distribution Service (DDS)
+
+-THE OS FRAGMENTATION PROBLEM IN ROBOTICS
+    1) Student Workstation OS
+        Students bring different machines with varying compiler toolchains and dependencies
+
+    2) Target Robot OS
+        Runs UBUNTU with specific drivers and ROS binaries
+
+    3) "Works on my machine"
+        Code builds locally on macOS or others and fails to compile on the robot or crashes during sensor communication
+
+[**Copied from Day4_notes]
+-INTRO TO VMs
+    A VM is a software emulation of a phusical computer rinning an OS and apps
+        -allows multiple OS to run on a single physical machine (Each is isolated)
+        -The OS' share physical resources like CPU, memory, and storage
+        -Super flexible
+[**End Copy]
+
+-INTRO TO HYPERVISORS
+    A software layer that enables virtualization bu allowing multiple OS' to run on a single physical machine
+
+    Types:
+        1: Bare-Metal) Runs directly on hardware
+            ex. VMware ESXi, Microsoft Hyper-V
+
+        2: Hosted) Runs on a host OS
+            ex. VMware Workstation, Oracle VirtualBox
+
+    Functions:
+        a) Resource management: Allocates physical resources to VMs
+        b) Isolation: Ensures each VM operates independentlu without interference
+        c) Performance Optimization: Manages VM performance and efficiency
+
+    Hardware virtualization:
+        Refers to the use of computer harware to support the creation and management of virtual machines more efficiently
+
+    Key tech:
+        Intel VT-x is for x86 processors, providing hardware extensions for improved VM performance
+
+        AMD-V offers something similar
+
+-VMS AND HYPERVISORS FOR ROBOTICS
+    application for robotics:
+        use of  hypervisor for test and dev
+
+        uniform DE
+
+        Ease of restarting
+
+-CONTAINERIZATION
+    Lightweight form of virtualization that packages and app and its dependencies into a single container
+
+    Ensures that apps run consistently across different computing env.
+
+    They run in isolated env. but share the host OS
+
+    Slower but saves more storage and allows for a program to be isolated from others on different devices
+
+    It's portable 
+
+    Orchestration:
+        Automates the deployment, scaling, and management of containerized apps
+
+    

@@ -1,0 +1,66 @@
+                                       ---------- Intro to Python ----------
+                                                     [Part 1]
+
+-WHY PYTHON IN ROBO SOFTWARE
+    Primarily used because of the large number of libraries
+
+    Rapid prototyping
+        *Doesn't like hardware so C is better for final products
+        *No compile/flash cycle like arduino
+
+    Easy to read oftentimes
+
+    Automation
+
+    Environment Check) 
+        *python --version
+
+-PYTHON vs ARDUINO C
+    workflow:
+        Arduino C) write --> compile --> upload
+        Python) write --> RUN!
+
+    Syntax blocks:
+        Arduino C) Braces {} for if, else, while, etc loops and for functions
+        Python) Indentation
+
+    Types:
+    Arduino C) Usually declared explicitly
+    Python) IT FIGURES IT OUT LOL
+
+    [MISSING]
+
+    Comments in python are with a #
+
+    Infinite loops are set up manually
+
+    python scripts run top to bottom 
+
+    Functions and classes must be defined first
+
+
+-CONDITIONALS
+    use == for comparison
+        = is for assignment
+
+-LOOPS 
+    for loops)
+        for i in [some range]:
+            do stuff
+
+    while loops)
+        count = 0
+        while count < 3:
+            do stuff
+            count +=1
+
+-PROGRAMMING FOR ROBOTICS
+    Most of the stuff we program for is event driven 
+
+    ROS allows for timers and callbacks to allow for the system to run on a schedule or reactively
+
+-FUNCTIONS
+    def function_name(input):
+        do stuff
+
+
