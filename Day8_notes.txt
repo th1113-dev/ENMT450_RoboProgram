@@ -1,0 +1,112 @@
+                                       ---------- Intro to Python ----------
+                                                     [Part 2]
+
+-WHY USE PYTHON IN ROBOTICS SOFTWARE
+    ROS2's primary client library, rclpy, is pure Python
+    
+    Massive amount of libraries
+        *PYP package manager is super helpful for downloading these libraries
+
+    Problem: We must write in C when interfacing with hardware. Python is too abstracted
+
+-SOME THINGS ABOUT PYTHON
+    No void setup(), no main(), no semicolons, no braces
+
+    It is just simple, plain, text
+
+    What's missing? ---> There is no compile step
+        *Errors appear at runtime. No way to catch bugs early.
+
+    Unit testing ---> Snippets of code to check to see if a part is running
+
+
+-CHECKING TYPES
+    Variables can be rebound to a different type at any time
+
+    type() - a function that tells you what data type a cariable currently is
+
+
+-STRINGS
+    f-strings are the pythonic way to build strings
+        used constatnly for ROS logging/debugging
+
+    Contrasts with C's spritf/printf format specifiers
+
+    Anything can go within the {} ---> Not just variable names. Allows for operations to be done
+
+
+-REBINDING
+    Data types can be rebound at any time during the operation/code
+        *Easy to write shit... AND get things wrong at any point
+
+
+-ARITHMETIC
+    /) division
+    //) floor division (rounded down)
+    **) power/exponential/power
+    %) modulo (Same as C)
+
+
+-IF/ELIF/ELSE
+    No () required
+
+    colon + indent replaces braces
+
+-WHILE LOOPS
+    Direct syntax from C
+        *No ++ or -- operators in python. Use += or -=
+
+    The count must be externally defined
+
+-FOR LOOPS  
+    Python's for-loops interates over a sequence not a counter
+
+    Two kinds:
+       value in range(number)---> iterates until the value = number
+
+      value in range(start,stop,step)---> iterates in increments accoring to what is in ()
+
+
+-ENUMERATE()
+    enumerate is the C style index counter:
+
+    better for iterating through data
+
+    [MISSING]
+
+
+-LISTS - DYNAMIC ARRAYS
+    You can append arrays in python (using append() - adds value at the end of a list)
+
+    indexing can be done both ways
+        index[1] - second item
+        index[0] - first item
+        index[-1] - last item
+
+    You can slice up lists into smaller sublists
+        index[a:b] - item at index a,b
+        index[:b] - first two items
+        sensors[::a] - reverse order
+
+-TUPLES - IMMUTABLE LISTS
+    Good for functions returning known data types and multiple values
+        *Keeps us from getting confuse
+
+    Not changeable
+
+
+-DICTIONARIES
+    You can create pairs of data as a list
+        * "Name":value ----> This is an example of a piece of data
+        * dictionary['newItem'] = newValue ---> adds new key to the end of the dictionary
+        * you can look things up by name, but you can't index
+    
+    Iterating through all values can be done by key and values
+
+
+-WHY THIS MATTERS FOR ROS2
+    ROS2 Messages often feel like nexted dictionaries when inspected
+
+    Parameters are commonly loaded as dictionaries
+
+    Publishing and subscribing to topics means constantly reading the dic.
