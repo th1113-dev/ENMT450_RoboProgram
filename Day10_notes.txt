@@ -1,0 +1,109 @@
+                                       ---------- Intro to Python ----------
+                                                     [Part 3]
+
+-CHEAT SHEET
+    [MISSING]
+
+
+-FUNCTIONS
+    def) Using def creates a function and awaits the names and inpust of the function
+        ex: def function(input):
+                *operations*
+
+    Default arguments can exist in arguments for the input within a function. There can be multiple defaults
+        *No overloading required
+        ex: def function(Default1 = 1, Default2 = False):
+                    *Operation*
+
+            function() --> Outputs the results operation based on defaults
+            function(#) or function(True/False) --> Replaces the defaults for this run of the function
+        
+    Keywords do not require a specific orders as long as the data types are different or the keywords
+    And their values are specifically named
+        ex: def function(Keyword1, Keyword2)
+                *Operation*
+
+            function
+            [MISSING]
+
+    Returning Multiple values is possible with tuples
+        *This is unlike C but you need to be careful of any Errors
+
+    Scope: variables must be claimed as global inside of a function in order for it to be modified outside
+    Of the function
+        *CAREFUL - it will not throw an error
+        ex: variable = 0
+            def function():
+                global variable
+                *Operation*
+
+    *args) specifically argument tuples 
+        *Creates a list of single value arguments --> (input0, input1, ..., inputn)
+
+    **kwargs) keyword arguments 
+        *Creates a list of dictionary arguments if dictionary inputs are given {dictionatry entry, ..., blah}
+
+    Common pitfalls:
+        Mutable default arguments (def f(x=[]))
+            The default data type is defined ONCE and not per call
+
+        Don't forget global for outside shit
+
+        Confusing return with print 
+
+        Assuming argument order matters onces you start using keywords
+
+
+-IMPORT
+    import) a function that allows us to use code from other files
+    
+    from) allows us to import specific functions from a files instead of the entire file
+        ex: from fileName import function1, function2
+
+    as) allows us to shorten the names of the imported files
+
+-VIRTUAL ENVIRONMENT
+    venv) a bash/terminal code to isolate a project's dependencies so version conflicts don't break other
+          projects
+        ex: python3 -m venv nameOfVirtualEnvironment
+
+            source nameOfVirtualEnvironment/bin/activate
+
+-SOME WEIRD SHIT (Locking down functions to a specific file)
+    if __name__=="__main__":) Keeps other files from accessing the functions in a file
+        *__name__ is the name of the file that is being run --> for file "yo_mama" do this: __yo-mama__
+        *"__main__" is the name of the parent file that is run (and then calls the import that runs the other files)
+        *print("__main__") --> A great way to check which file is truly the main file
+
+    Pitfalls:
+        running main.py from the wrong working directory
+            relative imports fail if you're not where you think you are
+
+        naming your own file the same as a standard library module
+            it will shadow the real one
+
+        don't forget the __name__ guard
+
+        confusing pip install with import. Don't do that lol
+
+
+-MORE NEW SHIIII
+    class) defines a blueprint - no objects exist yet
+        *You need to provide an attribute 
+
+    __init__) runs authomatically at creating time, like a constructor
+        *you need to pass "self" within the keywords 
+        *must be defined within 
+
+    self) is a memory pointer within the initialization function
+
+
+-EVEN MORE
+    Attributes) a dictionary of keywords with associated with a set of values
+        *Basically the name key to be able to use a class
+
+    [MISSING?]
+
+-METHODS vs FUNCTIONS
+    Method) a function tdefined inside of a class, with "self" first
+        
