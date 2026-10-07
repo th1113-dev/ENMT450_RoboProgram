@@ -1,0 +1,131 @@
+                                       ---------- Intro to Python ----------
+                                                     [Part 4]
+
+-super().__init__
+    super().__init__) runs so that the parent file realizes that it has "child" programs/files
+                      that it needs to pay attention to
+        **Needs to be called first to run smoothly
+
+    Do not modify a class attribute when you meant an instance attribute
+
+
+-try/except
+    try) Asks the computer to run the code despite any Errors
+
+    except) Allows for an error to occur without stopping the code
+
+        ex: try:
+                value = 10/0
+            except zeroDivisionError:
+                print("caught a division error, robot keeps running")
+
+        ** allows us to catch REAL bugs instead of them getting swallowed up by the error system
+
+
+-READING A PYTHON TRACEBACK
+    Read the Last line first
+        Then read upward to trace which line of code triggered an error
+
+
+-LIST COMPREHENSIONS
+    basically, making list from another list of data - Used to organize or make new lists to organize
+    what we have
+        format: ListName = [expression for expression in ogList]
+        ex: ogList = [1, 2, 3, 4, 5, 6]
+            
+            newList = [x*2 for x in ogList]
+                #newList = [2, 4, 6, 8, 10, 12]
+
+
+-PEP 8 style basics
+    snake_case) use snake_case for functions --> yo_mama()
+    
+    PascalCase) use for class names --> MyRobotClass
+
+    use 4 spaces instead of TABs because it's nice and makes the computer less fucking angy
+
+
+
+                                ---------- Tools for ROS2 and VM Setup ----------
+-INTRO TO ROS2
+    ROS2 is the current version of ROS and is the framework that allows for the communication of a robot system
+    and the sensors within
+
+    Nodes) Each node is a process that performs computation
+
+    Topics) Channels for the notes to exchange data/messages
+
+    Services) Request/Reply interaction model ---> Used for systems that need a guaranteed specific response
+        **Used for shit that REQUIRES SPECIFIC RESPONSES.
+
+
+-ROS2 COMMUNICATION SYSTEM
+    DDS(Data Distribution Service): 
+        Allows for nodes to talk to eachother security
+
+    Quality of Service(QoS):
+        Configurable settings to manage communication reliability and latency
+
+
+-ROS2 PACKAGES
+    Package structure:
+        They contain nodes, libs, config. files, and more
+    
+    Package Management:
+        ROS2 uses colcon to build packages
+
+        Supports modular and reusable code
+
+        Creates structured code for you to use
+
+
+-ROS2 LAUNCH SYSTEM
+    Lauch files) Used to start mltiple nodes and set parameters
+        **parameter files) Used to configure and set limits at LAUNCH
+
+    Parameter Server) The configuration settings
+        **DON'T FUCK WITH IT
+
+
+-ROS2 Tools
+    Rviz2) Visualization tool for robot state and data
+
+    Gazebo) Simulation tool for testing robot models and environments
+
+    Rqt) Graphical interface for inspecting and debugging nodes
+
+
+-REAL-TIME AND SECURITY IN ROS2
+    Real-Time Support) ROS2 has the ability to do real time shit
+
+    Security Features) Incorporates authentication, encryption, and access control
+        **You might have to log in homeboy
+
+
+-ROS1 VS ROS2
+    Architecture and middleware:
+        ROS1) Not real time and had a MASTER Nodes
+
+        ROS2) Decentralized, peer-to-peer architecture and used DDS to communicate
+
+    Communication and performance
+        ROS1) Communication over TCP/Updates
+
+        ROS2) Configurabel QoS for comms
+
+    Platform and language support
+        ROS1) Primary support of Linux and only in C++
+
+        ROS2) Cross-OS (Linux, Windows, and macOS) and multi-language support (C++, Python, etc.)
+
+    Security and Safety
+        ROS1) Super basic security
+
+        ROS2) More access control, authentication, and encryption 
+
+    Tools and ecosystem
+        ROS1) Uses catkin as a package management tool
+
+        ROS2) Uses colcon and has a growing library of tools
+
+        
