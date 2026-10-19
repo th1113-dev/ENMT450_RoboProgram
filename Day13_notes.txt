@@ -1,0 +1,81 @@
+                                         ---------- ROS2 CLI & WS DEEPDIVE ----------
+
+RECAP
+    Nodes communicate via topics (pub/sub), services(request/reply), actions, and parameters
+
+    A workspace (~/enmt450_ws) holds packages in src/; colcon build compiles them into build/, install/
+
+    [MISSING]
+
+
+COLCON 
+    Rebuilds all source files in the src/ folder and resolves the dependencies
+        -prebuilt in Docker
+
+
+FILES/WORKSPACE ANATOMY
+    src/) Source code - Only folder we commit from and edit
+    build/) intermediated build artifacts (Safe to delete whenever)
+    install/) the usable, installed version of the packages you have and setup.bash 
+    [MISSING]) [MISSING]
+
+
+BUILDING: FULL vs SELECTIVE
+    colcon build) builds every package in src/ --> FIne for small workspaces
+    coclcon build --packages-select <pkg_name>) builds only the packages you named
+        **Use for more than 2-3 packages
+    colcon build --symlining-install) symlinks python files instead of copying them
+        **Use so you don't have to call colcon again for .py files 
+
+
+SOURCING: MAKING THE WORKSPACE VISIBLE)
+    Building must be accompanied with sourcing so that your shell knows the workspace exists
+
+    source install/setup.bash overlays your workspace on top of the base ROS2 install
+        **If a file cannot be found, you forgot to source after Rebuilds
+
+    
+RUNNING TESTS AND CHECKING RESULTS
+    colcon test) Runs any tests defined in your packages
+    colcon test-result --verbose) prints a readable pass/fail summary
+    colcon list) shows every package colcon can see in your workspace
+
+
+BUILD ACTING WEIRD??? (CLEANING AND TROUBLESHOOTING)
+    NUKE the build install and log folders
+        **rm -rf build install log
+        **colcon build
+
+    Common issues:
+        Forgot to source
+        typo of package name
+        missing dependancy in package.xml
+
+        colcon build --packages-select <pkg> --cmake[MISSING]) Deep cleans a specific package
+
+
+WHY TURTLESIM?
+    Lightweight, built-in, simulator
+
+    Runs on fucking everything
+
+    Not a toy sim of hardware 
+        **It's a teaching tool
+
+    Works identically on turtlebot4 later
+
+    command for Terminal 1: ros2 turtlesim turtlesim 
+
+DRIVING THE TURTLE
+    Terminal 2 runs a teleop node that publishes the velocity commands based on arrow key inputs
+
+    command for Terminal 2) ros2 teleop_turtle
+
+    command for Terminal 3) ros2 topic list
+
+                                                            [MISSING A LOT]
+
+PUBLISH A COMMAND MANUALLY
+
+[MISSING]
+    
