@@ -1,0 +1,65 @@
+                                             ---------- ROS2. WHAT IS IT? ----------
+
+                                                      [MISSING HELLA SHIII]
+
+ROS2 MIDDLEWARE ARCHITECTURE & DDS DOMAIN ISO
+    [MISSING]
+
+
+ANATOMY OF A ROS2 WORKSPACE (ros2_ws)
+    When building with colcon, you would only have the src/ folder
+        All code goes inside src/!!!
+
+    Rules:
+        1: EDIT ONLY IN src/)
+            Don't fuck with anythin outside of this PLEASE
+
+        2: NEVER MODIFY GENERATED FOLDERS)
+            Never edit or commit build/, install/, and log/ stuff to git and DO NOT MODIFY MANUALLY
+
+        3: VERSION CONTROL src/ ONLY)
+            Everything else in src/ is good to edit. Add build/, log/, install/ to .gitignore
+
+
+BUILDING A WS WITH COLCON
+    Colcon is a multi-package build tool
+
+    It iterates through all packages in src/, computes the topological build dependencies, and compiles in parallel
+
+    It uses the Ament build system to rebuild
+ 
+    Essential command sequence:
+        cd ~/ros2_ws
+        colcon build
+        colcon build --symlink-install
+        colcon build [MISSING]
+
+
+ENVIRONMENT OVERLAYS AND SOURCING
+    Underlay (System Base ROS 2) - The globally installed ROS2 environment located in /opt/ros/jazzy/setup.bash
+                                   provides base messages and client libraries
+
+    Overlay (Your local ws) - The ws specofoc overlay located in ~/ros2_ws/install/setup.bash extends shell env. variables
+                              (PATH, PYTHONPATH) with your custom packages
+
+    Overlay cascade - Sourcing [MISSING]
+
+
+ANATOMY OF AN AMENT_PYTHON PACKAGE 
+    package directory layout:
+        Telemetry packages)
+            package.xml  <--- Declares dependacies and package metadata for rosdep
+    
+        Dependancies)
+            setup.py  <--- Maps executable names to Python module main() functions via console_scripts
+            setup.cfg
+            resource/
+                telemetry_pkg
+            telemetry_pkg/  
+                __innit__.py
+                signal_filter.py  <--- Pure python alg class with zero ROS imports. Testable in 2ms via pytest
+                telemetry_node.py
+            test/   << --- Unit tests (pytest) folder
+                test_signal_filter.py  <--- Thin rclpy wrapper class that handles timers, topics, and ROS callbacks
+    
+
