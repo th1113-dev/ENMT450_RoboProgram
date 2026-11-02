@@ -1,0 +1,8 @@
+                                            ---------- ROS2. CLI, and other shiiiii----------
+
+WHY COLCON MATTERS
+    ROS2's build tool
+        -builds every package in your workspace's src/ folder, resolving dependencies between them
+
+TURTLESIM
+    

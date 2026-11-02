@@ -1,16 +1,16 @@
                                        ---------- Unit Testing ----------
 
 WHAT IS UNIT TESTING 
-    Software testing method where individual units/components of a sfotware are tested in isolation
+    Software testing method where individual units/components of a software are tested in isolation
 
-    Unit) The smallest testable part of any software, typically a fucntion, method, or operation
+    Unit) The smallest testable part of any software, typically a function, method, or operation
 
 
 WHY USE IT IN ROBOTICS AND ENGINEERING
     1) Early bug detection
     2) Reduce Cost and effort
     3) Refactoring safety net 
-    4) [MISSING - NOT IMPORTANT]
+    4) Living code documentation
 
 STEPS OF UNIT TESTING
     1) Identify unit to test
@@ -19,20 +19,32 @@ STEPS OF UNIT TESTING
         Create test functions that call the unit with various inputs and check if the outputs [MISSING]
    
     3) Run tests
-        [MISSING]
+        Use a test runner to execute the test case
 
     4) Fix issues
-        [MISSING]
 
     5) repeat
 
 ANATOMY OF THE UNIT TEST
-    [MISSING]
+    ARRANGE
+        Set up inputs, parameters, and expected values
+
+    ACT
+        Execute target unit under test parameters
+
+    ASSERT
+        Compare actual output against expected output
+
+
 
 STATNDARD PYTHON UNIT TEST FRAMEWORK
     Built into python standard library
 
-    [MISSING]
+    Object oriented structure
+
+    Specific Assertation methods
+
+    Supports setUp() and tearDown() hooks
 
     pytest) Allows you to write palin functions with no class structure to make a test
         Modular fixures
